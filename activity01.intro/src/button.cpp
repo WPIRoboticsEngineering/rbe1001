@@ -16,7 +16,10 @@ enum SYSTEM_STATE {SYS_IDLE, SYS_ACTIVE};
 // Declare a variable, robotState, of our new type, ROBOT_STATE. Initialize it to ROBOT_IDLE.
 SYSTEM_STATE state = SYS_IDLE;
 
-
+/**
+ * This function does the real work. It gets called whenever the button is pressed.
+ * Walk through the if statement to learn how it works.
+ * */
 void handleButtonPress(void)
 {
   // How we handle to button depends on what state we're in
