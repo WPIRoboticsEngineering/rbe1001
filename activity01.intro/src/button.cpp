@@ -16,6 +16,33 @@ enum SYSTEM_STATE {SYS_IDLE, SYS_ACTIVE};
 // Declare a variable, robotState, of our new type, ROBOT_STATE. Initialize it to ROBOT_IDLE.
 SYSTEM_STATE state = SYS_IDLE;
 
+
+void handleButtonPress(void)
+{
+  // How we handle to button depends on what state we're in
+  if(state == SYS_IDLE) //if currently idle, switch to active
+  {
+      // Notify us that we're switching to ACTIVE
+      Serial.println("Button press -> ACTIVE");
+
+      // TODO: Turn the LED on
+
+      // Finally, update the state
+      state = SYS_ACTIVE;
+  }
+
+  else if(state == SYS_ACTIVE) // if currently active, switch to idle
+  {
+      // Notify us that we're switching to IDLE
+      Serial.println("Button press -> IDLE");
+
+      // TODO: Turn the LED off
+
+      // Finally, update the state
+      state = SYS_IDLE;
+  }
+}
+
 /*
  * This is the standard setup function that is called when the ESP32 is rebooted.
  * It is used to initialize anything that needs to be done once.
@@ -32,37 +59,10 @@ void setup()
   bootButton.Init();
 }
 
-/* Here is where all the fun happens. For each state, check for and respond to a button press.
+/**
+ * The loop is just one line: We check for the button press, and when we get one, we handle it
  */ 
 void loop()
 {
-  // Go through the state machine
-  if(state == SYS_IDLE)
-  {
-    if(bootButton.CheckButtonPress()) //if the button was pressed, switch to ACTIVE
-    {
-      // Notify us that we're switching to ACTIVE
-      Serial.println("Button press -> ACTIVE");
-
-      // TODO: Turn the LED on
-
-      // Finally, update the state
-      state = SYS_ACTIVE;
-    }
-  }
-
-  //note that we use else..if for each additional state, so it doesn't get confused
-  else if(state == SYS_ACTIVE)
-  {
-    if(bootButton.CheckButtonPress()) //if the button was pressed, switch to IDLE
-    {
-      // Notify us that we're switching to IDLE
-      Serial.println("Button press -> IDLE");
-
-      // TODO: Turn the LED off
-
-      // Finally, update the state
-      state = SYS_IDLE;
-    }
-  }
+  if(bootButton.checkButtonPress()) handleButtonPress();
 }
