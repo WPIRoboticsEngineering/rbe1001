@@ -67,5 +67,5 @@ void setup()
  */ 
 void loop()
 {
-  if(bootButton.CheckButtonPress()) handleButtonPress();
+  if(bootButton.checkButtonPress()) handleButtonPress();
 }
