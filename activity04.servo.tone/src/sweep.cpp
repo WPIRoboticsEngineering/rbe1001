@@ -2,15 +2,14 @@
 #include <ESP32Servo.h>
 
 // https://wpiroboticsengineering.github.io/RBE1001Lib/classServo.html
-Servo doorLock;
-#define SERVO_LOCK_PIN	25
+Servo servo;
+#define SERVO_PIN	14
 
 void setup() 
 {
 	Serial.begin(115200);
 	// pin definitions https://wpiroboticsengineering.github.io/RBE1001Lib/RBE1001Lib_8h.html#define-members
-	doorLock.attach(SERVO_LOCK_PIN);
-	doorLock.write(0);
+	servo.attach(SERVO_PIN);
 }
 
 /*
@@ -21,7 +20,7 @@ void setup()
 void loop() 
 {
 	uint16_t angle = (millis()/20) % 180;
-	doorLock.write(angle);
+	servo.write(angle);
 	Serial.println(angle);
 	delay(10);
 }
