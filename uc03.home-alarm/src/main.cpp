@@ -1,4 +1,5 @@
 #include <Arduino.h>
+#include <RBE1001Lib.h>
 
 //define the states in easy-to-read terms
 enum {ALARM_OFF, ALARM_ARMED, ALARM_INTRUDER};
