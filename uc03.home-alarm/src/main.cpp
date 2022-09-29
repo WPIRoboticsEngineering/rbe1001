@@ -6,12 +6,12 @@ enum {ALARM_OFF, ALARM_ARMED, ALARM_INTRUDER};
 int currentState = ALARM_OFF; //start off with the alarm deactivated
 
 //Some pin definitions:
-const int buttonArmingPin = 32;
-const int buttonDisarmingPin = 33;
-const int photoPin  = 27;
+const int buttonArmingPin = 0;
+const int buttonDisarmingPin = 32;
+const int photoPin  = 35;
 const int piezoPin  = 26;
-const int ledPin    = 14;
-const int servoPin  = 25;
+const int ledPin    = 33;
+const int servoPin  = 14;
 
 
 void HandleArmingButton(void)
