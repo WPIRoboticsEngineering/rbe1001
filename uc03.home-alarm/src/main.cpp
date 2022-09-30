@@ -82,6 +82,8 @@ bool CheckDisarmingButton(void)
 {
   bool retVal = false;
 
+  // TODO: Your checker here
+
   return retVal;
 }
 
