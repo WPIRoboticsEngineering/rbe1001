@@ -2,8 +2,8 @@
 #include <RBE1001Lib.h>
 
 //define the states in easy-to-read terms
-enum {ALARM_OFF, ALARM_ARMED, ALARM_INTRUDER};
-int currentState = ALARM_OFF; //start off with the alarm deactivated
+enum AlarmState {ALARM_OFF, ALARM_ARMED, ALARM_INTRUDER};
+AlarmState currentState = ALARM_OFF; //start off with the alarm deactivated
 
 //Some pin definitions:
 const int buttonArmingPin = 0;
