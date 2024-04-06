@@ -64,6 +64,8 @@ void setup()
   
   // Initialize the button object
   bootButton.Init();
+
+  attachInterruptArg(0, 0, 0, 0);
 }
 
 /**

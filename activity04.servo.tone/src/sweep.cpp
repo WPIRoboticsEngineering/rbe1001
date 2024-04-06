@@ -3,7 +3,7 @@
 
 // https://wpiroboticsengineering.github.io/RBE1001Lib/classServo.html
 Servo servo;
-#define SERVO_PIN	14
+#define SERVO_PIN	19
 
 void setup() 
 {
